@@ -1,0 +1,3 @@
+[submodule "latex-dainst-bundle"]
+	path = latex-dainst-bundle
+	url = https://github.com/dainst/latex-dainst-bundle
