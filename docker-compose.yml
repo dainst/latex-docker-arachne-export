@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+
+  latex:
+    build: .
+    volumes:
+      - ./latex-dainst-bundle:/latex-dainst-bundle
+      - ./files:/files
+    environment:
+
+volumes:
+data:
