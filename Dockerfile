@@ -16,17 +16,18 @@ RUN apt-get update && \
     rsync
 
 ENV LIBRARY_PATH=/lib:/usr/lib
-ENV PIPENV_VENV_IN_PROJECT=true
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
 COPY latex-dainst-bundle /latex-dainst-bundle
-COPY files /files
-COPY entrypoint.sh /usr/local/bin/
+RUN mkdir /files
 
 RUN cd /latex-dainst-bundle/dainst-bundle \
-    && make getCTAN \
+    && make cleanbundle \
     && make \
-    && make install
+    && make install \
+    && ls -l
+
+COPY entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["entrypoint.sh"]
