@@ -6,3 +6,4 @@ do
     echo "Try to render ${filename}"
     make FILE=${filename} render
 done
+chmod 777 /files/*
