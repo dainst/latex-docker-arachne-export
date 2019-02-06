@@ -5,5 +5,4 @@ services:
   latex:
     build: .
     volumes:
-      - ./latex-dainst-bundle:/latex-dainst-bundle
-      - ./files:/filesgit sum
+      - ./files:/files
